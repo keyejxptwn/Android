@@ -1,7 +1,7 @@
 # Android
 Android开发过程中一些技巧
 1.内存泄漏
-#一、单例造成的内存泄漏
+# 一、单例造成的内存泄漏
 Android的单例模式非常受开发者的喜爱，不过使用的不恰当的话也会造成内存泄漏。因为单例的静态特性使得单例的生命周期和应用的生命周期一样长，这就说明了如果一个对象已经不需要使用了，而单例对象还持有该对象的引用，那么这个对象将不能被正常回收，这就导致了内存泄漏。
 
 public class AppManager {
@@ -39,7 +39,7 @@ public class AppManager {
 }
 
 这样不管传入什么Context最终将使用Application的Context，而单例的生命周期和应用的一样长，这样就防止了内存泄漏。
-#二、非静态内部类创建静态实例造成的内存泄漏
+# 二、非静态内部类创建静态实例造成的内存泄漏
 有的时候我们可能会在启动频繁的Activity中，为了避免重复创建相同的数据资源，会出现这种写法：
 
 public class MainActivity extends AppCompatActivity {
@@ -215,6 +215,5 @@ static class MyAsyncTask extends AsyncTask<Void, Void, Void> {
 
 
 这样就避免了Activity的内存资源泄漏，当然在Activity销毁时候也应该取消相应的任务AsyncTask::cancel()，避免任务在后台执行浪费资源。
-
-#五、资源未关闭造成的内存泄漏
+# 五、资源未关闭造成的内存泄漏
 对于使用了BraodcastReceiver，ContentObserver，File，Cursor，Stream，Bitmap等资源的使用，应该在Activity销毁时及时关闭或者注销，否则这些资源将不会被回收，造成内存泄漏。
