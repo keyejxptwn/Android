@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
 这样就在Activity内部创建了一个非静态内部类的单例，每次启动Activity时都会使用该单例的数据，这样虽然避免了资源的重复创建，不过这种写法却会造成内存泄漏，因为非静态内部类默认会持有外部类的引用，而又使用了该非静态内部类创建了一个静态的实例，该实例的生命周期和应用的一样长，这就导致了该静态实例一直会持有该Activity的引用，导致Activity的内存资源不能正常回收。正确的做法为：
 将该内部类设为静态内部类或将该内部类抽取出来封装成一个单例，如果需要使用Context，请使用ApplicationContext 。
-三、Handler造成的内存泄漏
+# 三、Handler造成的内存泄漏
 Handler的使用造成的内存泄漏问题应该说最为常见了，平时在处理网络任务或者封装一些请求回调等api都应该会借助Handler来处理，对于Handler的使用代码编写一不规范即有可能造成内存泄漏，如下示例：
 
 public class MainActivity extends AppCompatActivity {
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
 }
 
 使用mHandler.removeCallbacksAndMessages(null);是移除消息队列中所有消息和所有的Runnable。当然也可以使用mHandler.removeCallbacks();或mHandler.removeMessages()；来移除指定的Runnable和Message。
-#四、线程造成的内存泄漏
+# 四、线程造成的内存泄漏
 对于线程造成的内存泄漏，也是平时比较常见的，如下这两个示例可能每个人都这样写过：
 
 //——————test1
