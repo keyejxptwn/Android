@@ -1,6 +1,6 @@
 # Android 7.0新特性
 
-标签（空格分隔）： Android
+# 参考链接：https://developer.android.com/about/versions/nougat/android-7.0.html
 
 ---
 
