@@ -1,21 +1,20 @@
-CardView的简单使用
+# CardView的简单使用
 
-Android_Material_Design CardView
+标签（空格分隔）： Android_Material_Design CardView
 
-CardView简介
+---
 
+##CardView简介##
 CardView是Android5.0之后为新增的控件，CardView是一个卡片布局，布局可以包含圆角和阴影，本质上CardView是一个FrameLayout，因此它作为一个布局容器，可以布局其他的View。
+##CardView属性##
+CardView中常用的**属性**有：
 
-CardView属性
-
-CardView中常用的属性有：
-
-cardElevation:设置阴影的大小
-cardBackgroundColor:卡片布局的背景颜色
-cardCornerRadius：卡片布局的圆角的大小
-conentPadding：卡片布局和内容之间的距离
-示例代码CODE
-
+ - `cardElevation`:设置阴影的大小
+ - `cardBackgroundColor`:卡片布局的背景颜色
+ - `cardCornerRadius`：卡片布局的圆角的大小
+ - `conentPadding`：卡片布局和内容之间的距离
+##示例代码CODE##
+```Java
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -70,6 +69,8 @@ conentPadding：卡片布局和内容之间的距离
         </LinearLayout>
     </LinearLayout>
 </android.support.v7.widget.CardView>
-必须添加依赖
+```
+必须添加依赖	
+   
 
- compile 'com.android.support:cardview-v7:23.4.0'
+     compile 'com.android.support:cardview-v7:23.4.0'
