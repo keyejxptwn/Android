@@ -113,7 +113,7 @@ mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigatio
     }
 });
 ```
-- [ ] 练习：把navigationview用listview替代
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
